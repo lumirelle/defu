@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v1.0.1
+
+### 🩹 Fixes
+
+- Nullish for nested object ([91a106b](https://github.com/lumirelle/defu/commit/91a106b))
+
+### ❤️ Contributors
+
+- Lumirelle ([@lumirelle](http://github.com/lumirelle))
+
 ## v1.0.0
 
 ### 🚀 Enhancements
