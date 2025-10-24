@@ -1,6 +1,6 @@
 {
   "name": "@lumirelle/defu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Recursively assign default properties. Lightweight and Fast!",
   "repository": "lumirelle/defu",
   "license": "MIT",
