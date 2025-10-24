@@ -70,6 +70,60 @@ const ext = createDefu((obj, key, value) => {
 ext({ cost: 15 }, { cost: 10 }); // { cost: 25 }
 ```
 
+## Use with nullish values
+
+By default, `defu` will skip nullish values in source object (`null` and `undefined`) when merging, so that the default values are preserved.
+
+```js
+import { defu } from "defu";
+
+defu(
+  {
+    name: null,
+    age: undefined,
+    country: "France",
+  },
+  {
+    name: "Lumirelle",
+    age: 30,
+  },
+);
+/*
+  {
+    name: 'Lumirelle',
+    age: 30,
+    country: 'France'
+  }
+*/
+```
+
+But if you want to consider nullish value as valid one, you can create a custom `defu` instance with option `acceptNullish` set to `true`.
+
+```js
+import { createDefu } from "defu";
+
+const defuWithNull = createDefu(undefined, { acceptNullish: true });
+
+defuWithNull(
+  {
+    name: null,
+    age: undefined,
+    country: "France",
+  },
+  {
+    name: "Lumirelle",
+    age: 30,
+  },
+);
+/*
+  {
+    name: null,
+    age: undefined,
+    country: 'France'
+  }
+*/
+```
+
 ## Function Merger
 
 Using `defuFn`, if user provided a function, it will be called with default value instead of merging.
@@ -108,19 +162,19 @@ defuFn(
 **Example:** Filter some items from defaults (array) and add 20 to the count default value.
 
 ```js
-import { defuArrayFn } from 'defu'
+import { defuArrayFn } from "defu";
 
-defuArrayFn({
-  ignore: (val) => val.filter(i => i !== 'dist'),
-  count: () => 20
- }, {
-   ignore: [
-     'node_modules',
-     'dist'
-   ],
-   count: 10
- })
- /*
+defuArrayFn(
+  {
+    ignore: (val) => val.filter((i) => i !== "dist"),
+    count: () => 20,
+  },
+  {
+    ignore: ["node_modules", "dist"],
+    count: 10,
+  },
+);
+/*
   {
     ignore: ['node_modules'],
     count: () => 20
@@ -159,13 +213,13 @@ MIT. Made with 💖
 
 <!-- Refs -->
 
-[npm-version-src]: https://img.shields.io/npm/v/defu?style=flat&colorA=18181B&colorB=F0DB4F
-[npm-version-href]: https://npmjs.com/package/defu
-[npm-downloads-src]: https://img.shields.io/npm/dm/defu?style=flat&colorA=18181B&colorB=F0DB4F
-[npm-downloads-href]: https://npmjs.com/package/defu
-[codecov-src]: https://img.shields.io/codecov/c/gh/unjs/defu/main?style=flat&colorA=18181B&colorB=F0DB4F
-[codecov-href]: https://codecov.io/gh/unjs/defu
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/defu?style=flat&colorA=18181B&colorB=F0DB4F
-[bundle-href]: https://bundlephobia.com/result?p=defu
-[license-src]: https://img.shields.io/github/license/unjs/defu.svg?style=flat&colorA=18181B&colorB=F0DB4F
-[license-href]: https://github.com/unjs/defu/blob/main/LICENSE
+[npm-version-src]: https://img.shields.io/npm/v/@lumirelle/defu?style=flat&colorA=18181B&colorB=F0DB4F
+[npm-version-href]: https://npmjs.com/package/@lumirelle/defu
+[npm-downloads-src]: https://img.shields.io/npm/dm/@lumirelle/defu?style=flat&colorA=18181B&colorB=F0DB4F
+[npm-downloads-href]: https://npmjs.com/package/@lumirelle/defu
+[codecov-src]: https://img.shields.io/codecov/c/gh/lumirelle/defu/main?style=flat&colorA=18181B&colorB=F0DB4F
+[codecov-href]: https://codecov.io/gh/lumirelle/defu
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/@lumirelle/defu?style=flat&colorA=18181B&colorB=F0DB4F
+[bundle-href]: https://bundlephobia.com/result?p=@lumirelle%2Fdefu
+[license-src]: https://img.shields.io/github/license/lumirelle/defu.svg?style=flat&colorA=18181B&colorB=F0DB4F
+[license-href]: https://github.com/lumirelle/defu/blob/main/LICENSE

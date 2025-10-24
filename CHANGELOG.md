@@ -2,275 +2,165 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## v6.1.4
+## v0.0.0
 
-[compare changes](https://github.com/unjs/defu/compare/v6.1.3...v6.1.4)
+> [!Note]
+>
+> This is the changelog for the original repository [unjs/defu](https://github.com/unjs/defu).
+
+### 🚀 Enhancements
+
+- Rewrite to typescript ([9c906e6](https://github.com/lumirelle/defu/commit/9c906e6))
+- Multi defaults ([89ef702](https://github.com/lumirelle/defu/commit/89ef702))
+- ⚠️ Merge arrays ([#18](https://github.com/lumirelle/defu/pull/18))
+- Custom and function merger ([#19](https://github.com/lumirelle/defu/pull/19))
+- Add defu.arrayFn ([#21](https://github.com/lumirelle/defu/pull/21))
+- Add type inference for defu result ([#24](https://github.com/lumirelle/defu/pull/24))
+- Pass namespace to custom merger ([#25](https://github.com/lumirelle/defu/pull/25))
+- ⚠️ Module exports ([42df406](https://github.com/lumirelle/defu/commit/42df406))
+- ⚠️ Skip nullish values from source ([#29](https://github.com/lumirelle/defu/pull/29))
+- ⚠️ Concat array defaults to the last ([f6df314](https://github.com/lumirelle/defu/commit/f6df314))
+- ⚠️ Use named exports ([4a8fc52](https://github.com/lumirelle/defu/commit/4a8fc52))
+- Export `Defu` type helper ([#45](https://github.com/lumirelle/defu/pull/45))
+
+### 🔥 Performance
+
+- Remove unnecessary isArray check ([902020e](https://github.com/lumirelle/defu/commit/902020e))
 
 ### 🩹 Fixes
 
-- Merge objects with `Module` type ([#121](https://github.com/unjs/defu/pull/121))
+- Imrpove non-object handlers ([f89fa28](https://github.com/lumirelle/defu/commit/f89fa28))
+- Improve es5 compatibility (#2, #9) ([#2](https://github.com/lumirelle/defu/issues/2), [#9](https://github.com/lumirelle/defu/issues/9))
+- Specify type declaration file more precisely ([#15](https://github.com/lumirelle/defu/pull/15))
+- Correct path to types ([33d4bf0](https://github.com/lumirelle/defu/commit/33d4bf0))
+- Recursively pass merger ([ec09394](https://github.com/lumirelle/defu/commit/ec09394))
+- **types:** Correct type inference where merged types are same ([#26](https://github.com/lumirelle/defu/pull/26))
+- Switch back to bili for es5 support till fixing in siroc ([07786c2](https://github.com/lumirelle/defu/commit/07786c2))
+- Workaround for #32 ([#32](https://github.com/lumirelle/defu/issues/32))
+- Add typing to allow for non-objects input args ([#42](https://github.com/lumirelle/defu/pull/42))
+- Merge object strings of many types ([#44](https://github.com/lumirelle/defu/pull/44))
+- **types:** Constrain inferred types of `Defu` ([3d3ea3e](https://github.com/lumirelle/defu/commit/3d3ea3e))
+- Add node16 compatible type declaration ([#73](https://github.com/lumirelle/defu/pull/73))
+- Only merge plain objects ([#111](https://github.com/lumirelle/defu/pull/111))
+- Merge objects with `Module` type ([#121](https://github.com/lumirelle/defu/pull/121))
 
 ### 💅 Refactors
 
-- Move `isPlainObject` to `_utils` to allow testing ([e922a16](https://github.com/unjs/defu/commit/e922a16))
-- Make `isPlainObject` logic more readable ([e458b63](https://github.com/unjs/defu/commit/e458b63))
+- Simplify types ([4f3ac4a](https://github.com/lumirelle/defu/commit/4f3ac4a))
+- Update repository ([8b44f93](https://github.com/lumirelle/defu/commit/8b44f93))
+- Move `isPlainObject` to `_utils` to allow testing ([e922a16](https://github.com/lumirelle/defu/commit/e922a16))
+- Make `isPlainObject` logic more readable ([e458b63](https://github.com/lumirelle/defu/commit/e458b63))
 
 ### 📖 Documentation
 
-- Fix typo ([#116](https://github.com/unjs/defu/pull/116))
-
-### 🏡 Chore
-
-- **release:** V6.1.3 ([3834ca1](https://github.com/unjs/defu/commit/3834ca1))
-- Update deps and lint ([e5a48d3](https://github.com/unjs/defu/commit/e5a48d3))
-- Enable `skipLipCheck` for type tests ([7c7a9a4](https://github.com/unjs/defu/commit/7c7a9a4))
-
-### ✅ Tests
-
-- Improve tests for isPlainObject ([b24a213](https://github.com/unjs/defu/commit/b24a213))
-
-### ❤️ Contributors
-
-- Alexander Lichter ([@manniL](http://github.com/manniL))
-- Pooya Parsa ([@pi0](http://github.com/pi0))
-- Yu Le <is.yuler@gmail.com>
-
-## v6.1.3
-
-[compare changes](https://github.com/unjs/defu/compare/v6.1.2...v6.1.3)
-
-### 🩹 Fixes
-
-- Only merge plain objects ([#111](https://github.com/unjs/defu/pull/111))
-
-### 📖 Documentation
-
-- Update badges ([581dd92](https://github.com/unjs/defu/commit/581dd92))
-- Fix typo ([#96](https://github.com/unjs/defu/pull/96))
-- Fix the result of the array merging ([#99](https://github.com/unjs/defu/pull/99))
-- Fix typo ([#107](https://github.com/unjs/defu/pull/107))
+- Add note about null ([3aefc14](https://github.com/lumirelle/defu/commit/3aefc14))
+- Improve testing and readme ([e949864](https://github.com/lumirelle/defu/commit/e949864))
+- Add banner ([fdc0e47](https://github.com/lumirelle/defu/commit/fdc0e47))
+- Update banner ([1bb7c78](https://github.com/lumirelle/defu/commit/1bb7c78))
+- Update badges ([581dd92](https://github.com/lumirelle/defu/commit/581dd92))
+- Fix typo ([#96](https://github.com/lumirelle/defu/pull/96))
+- Fix the result of the array merging ([#99](https://github.com/lumirelle/defu/pull/99))
+- Fix typo ([#107](https://github.com/lumirelle/defu/pull/107))
+- Fix typo ([#116](https://github.com/lumirelle/defu/pull/116))
 
 ### 📦 Build
 
-- Backward compatible cjs entry ([#110](https://github.com/unjs/defu/pull/110))
+- Backward compatible cjs entry ([#110](https://github.com/lumirelle/defu/pull/110))
 
 ### 🏡 Chore
 
-- Update dependencies ([63d0e8e](https://github.com/unjs/defu/commit/63d0e8e))
-- Enable ts strict mode ([82d68c7](https://github.com/unjs/defu/commit/82d68c7))
-- Fix tests ([59d0f6a](https://github.com/unjs/defu/commit/59d0f6a))
+- Add remarks ([5931f65](https://github.com/lumirelle/defu/commit/5931f65))
+- **release:** 0.0.1 ([a3d8395](https://github.com/lumirelle/defu/commit/a3d8395))
+- Add bundlephobia badge ([1afa6a8](https://github.com/lumirelle/defu/commit/1afa6a8))
+- **pkg:** Typo in repository ([9b643b3](https://github.com/lumirelle/defu/commit/9b643b3))
+- Fix typo in readme ([bd77860](https://github.com/lumirelle/defu/commit/bd77860))
+- **release:** 0.0.2 ([e0086fa](https://github.com/lumirelle/defu/commit/e0086fa))
+- **release:** 0.0.3 ([db3e28d](https://github.com/lumirelle/defu/commit/db3e28d))
+- **release:** 0.0.4 ([3eb0d71](https://github.com/lumirelle/defu/commit/3eb0d71))
+- **release:** 1.0.0 ([10c791e](https://github.com/lumirelle/defu/commit/10c791e))
+- **release:** 2.0.0 ([0fe2b45](https://github.com/lumirelle/defu/commit/0fe2b45))
+- **ci:** Switch to github actions ([c6741c7](https://github.com/lumirelle/defu/commit/c6741c7))
+- **release:** 2.0.1 ([39898ab](https://github.com/lumirelle/defu/commit/39898ab))
+- Improve changelog ([53fca52](https://github.com/lumirelle/defu/commit/53fca52))
+- Directly pass \_defu to reduce ([1df36ca](https://github.com/lumirelle/defu/commit/1df36ca))
+- **release:** 2.0.2 ([b1a3758](https://github.com/lumirelle/defu/commit/b1a3758))
+- Make usage consistent with js syntax ([2eff149](https://github.com/lumirelle/defu/commit/2eff149))
+- Simplify project and build ([a3520ed](https://github.com/lumirelle/defu/commit/a3520ed))
+- **release:** 2.0.3 ([8a9ec1b](https://github.com/lumirelle/defu/commit/8a9ec1b))
+- **release:** 2.0.4 ([b07e4be](https://github.com/lumirelle/defu/commit/b07e4be))
+- Update dependencies ([c4e8c5d](https://github.com/lumirelle/defu/commit/c4e8c5d))
+- **release:** 3.0.0 ([e34d3bf](https://github.com/lumirelle/defu/commit/e34d3bf))
+- Refine changelog ([91ed5ff](https://github.com/lumirelle/defu/commit/91ed5ff))
+- **release:** 3.0.1 ([5d89e56](https://github.com/lumirelle/defu/commit/5d89e56))
+- **readme:** Small typo fixes ([#20](https://github.com/lumirelle/defu/pull/20))
+- Use dm badge ([9de2569](https://github.com/lumirelle/defu/commit/9de2569))
+- **release:** 3.1.0 ([64003bd](https://github.com/lumirelle/defu/commit/64003bd))
+- Fix readme typos ([#22](https://github.com/lumirelle/defu/pull/22))
+- Use `siroc` to build project ([#23](https://github.com/lumirelle/defu/pull/23))
+- **release:** 3.2.0 ([694c26e](https://github.com/lumirelle/defu/commit/694c26e))
+- **release:** 3.2.1 ([022295a](https://github.com/lumirelle/defu/commit/022295a))
+- **release:** 3.2.2 ([c6a0999](https://github.com/lumirelle/defu/commit/c6a0999))
+- Update repo ([602e5fa](https://github.com/lumirelle/defu/commit/602e5fa))
+- Fix lint issues ([c847b70](https://github.com/lumirelle/defu/commit/c847b70))
+- **release:** 4.0.0 ([8c4ede6](https://github.com/lumirelle/defu/commit/8c4ede6))
+- **pkg:** Fix typo ([f9296a5](https://github.com/lumirelle/defu/commit/f9296a5))
+- **release:** 4.0.1 ([cc0a643](https://github.com/lumirelle/defu/commit/cc0a643))
+- **release:** 5.0.0 ([c21b132](https://github.com/lumirelle/defu/commit/c21b132))
+- Upgrade dependencies ([a1c57bb](https://github.com/lumirelle/defu/commit/a1c57bb))
+- **release:** 5.0.1 ([54b3108](https://github.com/lumirelle/defu/commit/54b3108))
+- Update deps ([5c433eb](https://github.com/lumirelle/defu/commit/5c433eb))
+- Update lockfile ([44c8c02](https://github.com/lumirelle/defu/commit/44c8c02))
+- Update repo ([2a1c94d](https://github.com/lumirelle/defu/commit/2a1c94d))
+- Update badges ([a25fb01](https://github.com/lumirelle/defu/commit/a25fb01))
+- Update cjs usage ([da1301b](https://github.com/lumirelle/defu/commit/da1301b))
+- **release:** 6.0.0 ([e50528b](https://github.com/lumirelle/defu/commit/e50528b))
+- Update deps ([56fcce5](https://github.com/lumirelle/defu/commit/56fcce5))
+- **release:** 6.0.1 ([e349486](https://github.com/lumirelle/defu/commit/e349486))
+- **release:** 6.1.0 ([154ad1a](https://github.com/lumirelle/defu/commit/154ad1a))
+- **release:** 6.1.1 ([1c02e31](https://github.com/lumirelle/defu/commit/1c02e31))
+- Fix renovate config ([#56](https://github.com/lumirelle/defu/pull/56))
+- Use changelogen to release ([5e24124](https://github.com/lumirelle/defu/commit/5e24124))
+- **release:** V6.1.2 ([4262fe8](https://github.com/lumirelle/defu/commit/4262fe8))
+- Update dependencies ([63d0e8e](https://github.com/lumirelle/defu/commit/63d0e8e))
+- Enable ts strict mode ([82d68c7](https://github.com/lumirelle/defu/commit/82d68c7))
+- Fix tests ([59d0f6a](https://github.com/lumirelle/defu/commit/59d0f6a))
+- **release:** V6.1.3 ([3834ca1](https://github.com/lumirelle/defu/commit/3834ca1))
+- Update deps and lint ([e5a48d3](https://github.com/lumirelle/defu/commit/e5a48d3))
+- Enable `skipLipCheck` for type tests ([7c7a9a4](https://github.com/lumirelle/defu/commit/7c7a9a4))
+- **release:** V6.1.4 ([955204b](https://github.com/lumirelle/defu/commit/955204b))
+- Add tea.yaml ([70cffe5](https://github.com/lumirelle/defu/commit/70cffe5))
+
+### ✅ Tests
+
+- Improve coverage ([15049b2](https://github.com/lumirelle/defu/commit/15049b2))
+- Add test for ignoring non-objects ([2609115](https://github.com/lumirelle/defu/commit/2609115))
+- Improve null test ([7b8f853](https://github.com/lumirelle/defu/commit/7b8f853))
+- Improve tests for isPlainObject ([b24a213](https://github.com/lumirelle/defu/commit/b24a213))
+- Add more tests for plain objects ([b65f603](https://github.com/lumirelle/defu/commit/b65f603))
 
 ### 🎨 Styles
 
-- Format with prettier v3 ([32650f1](https://github.com/unjs/defu/commit/32650f1))
+- Format with prettier ([26477ed](https://github.com/lumirelle/defu/commit/26477ed))
+- Format with prettier v3 ([32650f1](https://github.com/lumirelle/defu/commit/32650f1))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Merge arrays ([#18](https://github.com/lumirelle/defu/pull/18))
+- ⚠️ Module exports ([42df406](https://github.com/lumirelle/defu/commit/42df406))
+- ⚠️ Skip nullish values from source ([#29](https://github.com/lumirelle/defu/pull/29))
+- ⚠️ Concat array defaults to the last ([f6df314](https://github.com/lumirelle/defu/commit/f6df314))
+- ⚠️ Use named exports ([4a8fc52](https://github.com/lumirelle/defu/commit/4a8fc52))
 
 ### ❤️ Contributors
 
 - Pooya Parsa ([@pi0](http://github.com/pi0))
+- Alexander Lichter ([@TheAlexLichter](http://github.com/TheAlexLichter))
+- Yu Le <is.yuler@gmail.com>
 - Abdul Al-Hasany <info@kalimah-apps.com>
-- Kricsleo 
+- Kricsleo ([@kricsleo](http://github.com/kricsleo))
 - Donald Shtjefni ([@dnldsht](http://github.com/dnldsht))
-- Sébastien Chopin <seb@nuxtjs.com>
-
-## v6.1.2
-
-[compare changes](https://github.com/unjs/defu/compare/v6.1.1...v6.1.2)
-
-
-### 🩹 Fixes
-
-  - Add node16 compatible type declaration ([#73](https://github.com/unjs/defu/pull/73))
-
-### 🏡 Chore
-
-  - Fix renovate config ([#56](https://github.com/unjs/defu/pull/56))
-  - Use changelogen to release ([5e24124](https://github.com/unjs/defu/commit/5e24124))
-
-### 🎨 Styles
-
-  - Format with prettier ([26477ed](https://github.com/unjs/defu/commit/26477ed))
-
-### ❤️  Contributors
-
-- Pooya Parsa <pooya@pi0.io>
-- Daniel Roe <daniel@roe.dev>
+- Sébastien Chopin ([@atinux](http://github.com/atinux))
+- Daniel Roe ([@danielroe](http://github.com/danielroe))
 - Nozomu Ikuta <nick.0508.nick@gmail.com>
-
-### [6.1.1](https://github.com/unjs/defu/compare/v6.1.0...v6.1.1) (2022-11-14)
-
-## [6.1.0](https://github.com/unjs/defu/compare/v6.0.1...v6.1.0) (2022-08-16)
-
-
-### Features
-
-* export `Defu` type helper ([#45](https://github.com/unjs/defu/issues/45)) ([551ae4c](https://github.com/unjs/defu/commit/551ae4c87c13f2188b97930eaffd72e5575e9048))
-
-
-### Bug Fixes
-
-* **types:** constrain inferred types of `Defu` ([3d3ea3e](https://github.com/unjs/defu/commit/3d3ea3e4e982591632f070bbf64e28f9d98d6bf9))
-
-### [6.0.1](https://github.com/unjs/defu/compare/v6.0.0...v6.0.1) (2022-08-16)
-
-
-### Bug Fixes
-
-* add typing to allow for non-objects input args ([#42](https://github.com/unjs/defu/issues/42)) ([1f3a701](https://github.com/unjs/defu/commit/1f3a701bc3fd839344359ad5c2b358fbefd978cc))
-* merge object strings of many types  ([#44](https://github.com/unjs/defu/issues/44)) ([c7226f9](https://github.com/unjs/defu/commit/c7226f971740966282530745030123aa07ff7b17))
-
-## [6.0.0](https://github.com/unjs/defu/compare/v5.0.1...v6.0.0) (2022-03-21)
-
-
-### ⚠ BREAKING CHANGES
-
-* Use named exports:
-- `import defu from 'defu'` => `import { defu } from 'defu'`
-- `defu.fn` => `import { defuFn }`
-- `defu.arrayFn` => `import { defuArrayFn }`
-* When merging input value with defaults with an array, order is reversed
-
-### Features
-
-* concat array defaults to the last ([f6df314](https://github.com/unjs/defu/commit/f6df314c26540591c3ac6534c6942edc3b06384f))
-* use named exports ([4a8fc52](https://github.com/unjs/defu/commit/4a8fc52c228d82949384a50efe8f0052e9eaba68))
-
-
-### Bug Fixes
-
-* workaround for [#32](https://github.com/unjs/defu/issues/32) ([7b1f284](https://github.com/unjs/defu/commit/7b1f284b76d2a4706b37adbdb99c49ec9d2d35aa))
-
-### [5.0.1](https://github.com/unjs/defu/compare/v5.0.0...v5.0.1) (2022-01-13)
-
-## [5.0.0](https://github.com/unjs/defu/compare/v4.0.1...v5.0.0) (2021-05-12)
-
-
-### ⚠ BREAKING CHANGES
-
-* `undefined` values will be bypassed and not consistent behavior with defaults-deep anymore.
-
-### Features
-
-* skip nullish values from source ([#29](https://github.com/unjs/defu/issues/29)) ([076f10a](https://github.com/unjs/defu/commit/076f10a77fc1384f53e0586d3c77d754cd419f06))
-
-### [4.0.1](https://github.com/unjs/defu/compare/v4.0.0...v4.0.1) (2021-04-23)
-
-## [4.0.0](https://github.com/unjs/defu/compare/v3.2.2...v4.0.0) (2021-04-23)
-
-
-### ⚠ BREAKING CHANGES
-
-* module exports
-
-### Features
-
-* module exports ([42df406](https://github.com/unjs/defu/commit/42df406b6938bc7ffb5f628efaa9447c4e95b211))
-
-### [3.2.2](https://github.com/unjs/defu/compare/v3.2.1...v3.2.2) (2020-11-10)
-
-
-### Bug Fixes
-
-* switch back to bili for es5 support till fixing in siroc ([07786c2](https://github.com/unjs/defu/commit/07786c270f9bf49529d8203f31b4b9bd696a6ee3))
-
-### [3.2.1](https://github.com/unjs/defu/compare/v3.2.0...v3.2.1) (2020-11-09)
-
-
-### Bug Fixes
-
-* **types:** correct type inference where merged types are same ([#26](https://github.com/unjs/defu/issues/26)) ([f322607](https://github.com/unjs/defu/commit/f322607515a5bd19b1a2f28d7e3336fee9194520))
-
-## [3.2.0](https://github.com/unjs/defu/compare/v3.1.0...v3.2.0) (2020-11-09)
-
-
-### Features
-
-* add type inference for defu result ([#24](https://github.com/unjs/defu/issues/24)) ([934d736](https://github.com/unjs/defu/commit/934d736da31f4824d9e135d925cece361b73c533))
-* pass namespace to custom merger ([#25](https://github.com/unjs/defu/issues/25)) ([6bd7ef5](https://github.com/unjs/defu/commit/6bd7ef59ce3e94b68108355942dba9ac49284523))
-
-## [3.1.0](https://github.com/unjs/defu/compare/v3.0.1...v3.1.0) (2020-08-04)
-
-
-### Features
-
-* add defu.arrayFn ([#21](https://github.com/unjs/defu/issues/21)) ([df05ed0](https://github.com/unjs/defu/commit/df05ed04088d6e0f0bc1a8cd9603fae46fb59268))
-
-### [3.0.1](https://github.com/unjs/defu/compare/v3.0.0...v3.0.1) (2020-07-29)
-
-
-### Bug Fixes
-
-* recursively pass merger ([ec09394](https://github.com/unjs/defu/commit/ec09394d77533cd0a4753a943a5d6fbd25ef308d))
-
-## [3.0.0](https://github.com/unjs/defu/compare/v2.0.4...v3.0.0) (2020-07-28)
-
-
-### ⚠ BREAKING CHANGES
-
-* defau will merge arrays too (#18)
-
-### Features
-
-* extend and custom merger ([#19](https://github.com/unjs/defu/issues/19)) ([4932232](https://github.com/unjs/defu/commit/493223278840132a6de2c3291b60f7b00b3fa477))
-* merge arrays ([#18](https://github.com/unjs/defu/issues/18)) ([22c631e](https://github.com/unjs/defu/commit/22c631e354d9bc50380ce7beb8914bd44feb2309))
-
-### [2.0.4](https://github.com/unjs/defu/compare/v2.0.3...v2.0.4) (2020-05-22)
-
-
-### Bug Fixes
-
-* correct path to types ([33d4bf0](https://github.com/unjs/defu/commit/33d4bf0331e70b69a3a2a392f18a8f890d45d4f9))
-
-### [2.0.3](https://github.com/unjs/defu/compare/v2.0.2...v2.0.3) (2020-05-22)
-
-
-### Bug Fixes
-
-* specify type declaration file more precisely ([#15](https://github.com/unjs/defu/issues/15)) ([6aa47d4](https://github.com/unjs/defu/commit/6aa47d4a06a117b34b5e9231b04f8403056c2685))
-
-### [2.0.2](https://github.com/unjs/defu/compare/v2.0.1...v2.0.2) (2020-04-19)
-
-### [2.0.1](https://github.com/unjs/defu/compare/v2.0.0...v2.0.1) (2020-04-19)
-
-### Docs
-
-* Add note about `null`
-
-## [2.0.0](https://github.com/unjs/defu/compare/v1.0.0...v2.0.0) (2020-04-19)
-
-### Features
-
-* Support passing multiple defaults ([89ef702](https://github.com/unjs/defu/commit/89ef702736b49cd48ca99a0dc64aa6ef3bd74e2d))
-* Typescript rewrite ([9c906e6](https://github.com/unjs/defu/commit/9c906e64459da64d77124224edb66034ce92f20c))
-
-<a name="1.0.0"></a>
-# [1.0.0](https://github.com/unjs/defu/compare/v0.0.4...v1.0.0) (2020-02-02)
-
-
-
-<a name="0.0.4"></a>
-## [0.0.4](https://github.com/unjs/defu/compare/v0.0.3...v0.0.4) (2020-01-01)
-
-
-### Bug Fixes
-
-* improve es5 compatibility ([#2](https://github.com/unjs/defu/issues/2), [#9](https://github.com/unjs/defu/issues/9)) ([5a6de7c](https://github.com/unjs/defu/commit/5a6de7c))
-
-
-
-<a name="0.0.3"></a>
-## [0.0.3](https://github.com/unjs/defu/compare/v0.0.1...v0.0.3) (2019-05-25)
-
-
-
-<a name="0.0.2"></a>
-## [0.0.2](https://github.com/jesless/defu/compare/v0.0.1...v0.0.2) (2019-05-25)
-
-
-
-<a name="0.0.1"></a>
-## 0.0.1 (2019-02-07)
-
-
-### Bug Fixes
-
-* imrpove non-object handlers ([f89fa28](https://github.com/jesless/defu/commit/f89fa28))
+- Hugo Duroux <hugo.duroux@gmail.com>
+- Rafał Chłodnicki ([@rchl](http://github.com/rchl))

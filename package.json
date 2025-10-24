@@ -1,8 +1,8 @@
 {
-  "name": "defu",
-  "version": "6.1.4",
+  "name": "@lumirelle/defu",
+  "version": "0.0.0",
   "description": "Recursively assign default properties. Lightweight and Fast!",
-  "repository": "unjs/defu",
+  "repository": "lumirelle/defu",
   "license": "MIT",
   "exports": {
     ".": {

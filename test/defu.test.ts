@@ -173,6 +173,18 @@ describe("defu", () => {
     expect(ext({ cost: 15 }, { cost: 10 })).toEqual({ cost: 25 });
   });
 
+  it("use with nullish values", () => {
+    const ext = createDefu(undefined, { acceptNullish: true });
+    expect(ext({ a: 1, b: 2 }, { a: null, b: undefined })).toEqual({
+      a: 1,
+      b: 2,
+    });
+    expect(ext({ a: null, b: undefined }, { a: 1, b: 2 })).toEqual({
+      a: null,
+      b: undefined,
+    });
+  });
+
   it("defuFn()", () => {
     // eslint-disable-next-line unicorn/consistent-function-scoping
     const num = () => 20;

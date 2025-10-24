@@ -7,6 +7,7 @@ function _defu<T>(
   defaults: any,
   namespace = ".",
   merger?: Merger,
+  options?: { acceptNullish: boolean },
 ): T {
   if (!isPlainObject(defaults)) {
     return _defu(baseObject, {}, namespace, merger);
@@ -21,7 +22,10 @@ function _defu<T>(
 
     const value = baseObject[key];
 
-    if (value === null || value === undefined) {
+    if (
+      options?.acceptNullish !== true &&
+      (value === null || value === undefined)
+    ) {
       continue;
     }
 
@@ -47,10 +51,13 @@ function _defu<T>(
 }
 
 // Create defu wrapper with optional merger and multi arg support
-export function createDefu(merger?: Merger): DefuFunction {
+export function createDefu(
+  merger?: Merger,
+  options?: { acceptNullish: boolean },
+): DefuFunction {
   return (...arguments_) =>
     // eslint-disable-next-line unicorn/no-array-reduce
-    arguments_.reduce((p, c) => _defu(p, c, "", merger), {} as any);
+    arguments_.reduce((p, c) => _defu(p, c, "", merger, options), {} as any);
 }
 
 // Standard version
