@@ -183,6 +183,9 @@ describe("defu", () => {
       a: null,
       b: undefined,
     });
+    expect(ext({ a: { b: null } }, { a: { b: 1 } })).toEqual({
+      a: { b: null },
+    });
   });
 
   it("defuFn()", () => {

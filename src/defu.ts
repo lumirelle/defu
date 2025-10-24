@@ -41,6 +41,7 @@ function _defu<T>(
         object[key],
         (namespace ? `${namespace}.` : "") + key.toString(),
         merger,
+        options,
       );
     } else {
       object[key] = value;
