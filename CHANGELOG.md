@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v1.1.0
+
+### 🚀 Enhancements
+
+- Support reverse array merging order ([6dc7081](https://github.com/lumirelle/defu/commit/6dc7081))
+
+### ❤️ Contributors
+
+- Lumirelle ([@lumirelle](http://github.com/lumirelle))
+
 ## v1.0.2
 
 ### 🏡 Chore
