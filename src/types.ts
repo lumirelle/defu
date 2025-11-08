@@ -109,3 +109,37 @@ export type Merge<Destination extends Input, Defaults extends Input> =
                         ? MergeObjects<Destination, Defaults>
                         : Destination | Defaults
                       : Destination | Defaults;
+
+export interface DefuOptions {
+  /**
+   * Whether to recognize nullish values (null and undefined) as valid values to override defaults.
+   */
+  acceptNullish?: boolean;
+  /**
+   * Whether to reverse the order of merging arrays.
+   *
+   * By default, when merging arrays, the values from the base object are placed before the default values.
+   *
+   * For example, by default:
+   *
+   * ```ts
+   * const result = defu(
+   *   { arr: [3, 4] },
+   *   { arr: [1, 2] }
+   * );
+   * // => [3, 4, 1, 2]
+   * ```
+   *
+   * With `reverseArrayOrder` set to `true`:
+   *
+   * ```ts
+   * const defu = createDefu(undefined, { reverseArrayOrder: true });
+   * const result = defu(
+   *   { arr: [3, 4] },
+   *   { arr: [1, 2] },
+   * );
+   * // => [1, 2, 3, 4]
+   * ```
+   */
+  reverseArrayOrder?: boolean;
+}

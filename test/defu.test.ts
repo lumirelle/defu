@@ -188,6 +188,16 @@ describe("defu", () => {
     });
   });
 
+  it("reverse array merging order", () => {
+    expect(defu({ a: [3, 4] }, { a: [1, 2] })).toEqual({
+      a: [3, 4, 1, 2],
+    });
+    const ext = createDefu(undefined, { reverseArrayOrder: true });
+    expect(ext({ a: [3, 4] }, { a: [1, 2] })).toEqual({
+      a: [1, 2, 3, 4],
+    });
+  });
+
   it("defuFn()", () => {
     // eslint-disable-next-line unicorn/consistent-function-scoping
     const num = () => 20;

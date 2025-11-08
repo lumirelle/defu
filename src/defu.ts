@@ -1,5 +1,10 @@
 import { isPlainObject } from "./_utils";
-import type { Merger, DefuFn as DefuFunction, DefuInstance } from "./types";
+import type {
+  Merger,
+  DefuFn as DefuFunction,
+  DefuInstance,
+  DefuOptions,
+} from "./types";
 
 // Base function to apply defaults
 function _defu<T>(
@@ -7,7 +12,7 @@ function _defu<T>(
   defaults: any,
   namespace = ".",
   merger?: Merger,
-  options?: { acceptNullish: boolean },
+  options?: DefuOptions,
 ): T {
   if (!isPlainObject(defaults)) {
     return _defu(baseObject, {}, namespace, merger);
@@ -34,7 +39,9 @@ function _defu<T>(
     }
 
     if (Array.isArray(value) && Array.isArray(object[key])) {
-      object[key] = [...value, ...object[key]];
+      object[key] = options?.reverseArrayOrder
+        ? [...object[key], ...value]
+        : [...value, ...object[key]];
     } else if (isPlainObject(value) && isPlainObject(object[key])) {
       object[key] = _defu(
         value,
@@ -54,7 +61,7 @@ function _defu<T>(
 // Create defu wrapper with optional merger and multi arg support
 export function createDefu(
   merger?: Merger,
-  options?: { acceptNullish: boolean },
+  options?: DefuOptions,
 ): DefuFunction {
   return (...arguments_) =>
     // eslint-disable-next-line unicorn/no-array-reduce
