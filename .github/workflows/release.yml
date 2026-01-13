@@ -1,0 +1,17 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions: {}
+
+jobs:
+  release:
+    uses: lumirelle/workflows/.github/workflows/release.yml@v3
+    with:
+      runtime: node
+      publish: true
+    permissions:
+      contents: write
+      id-token: write

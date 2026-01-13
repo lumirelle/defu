@@ -1,28 +1,16 @@
-name: ci
+name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
+
+permissions: {}
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: "pnpm"
-      - run: pnpm install
-      - run: pnpm lint
-      - run: pnpm build
-      - run: pnpm test:types
-      - run: pnpm vitest --coverage
-      - uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+    uses: lumirelle/workflows/.github/workflows/ci.yml@v3
+    with:
+      runtime: node
+      build-for-check: true
