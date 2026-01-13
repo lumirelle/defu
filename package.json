@@ -19,14 +19,16 @@
     "lib"
   ],
   "scripts": {
-    "build": "unbuild",
     "dev": "vitest",
+    "build": "unbuild",
     "lint": "eslint --ext .ts src && prettier -c src test",
     "lint:fix": "eslint --ext .ts src --fix && prettier -w src test",
-    "prepack": "pnpm build",
-    "release": "pnpm test && changelogen --release && git push --follow-tags && pnpm publish",
-    "test": "pnpm lint && pnpm vitest run",
-    "test:types": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "usagecheck": "echo WIP!",
+    "check": "pnpm lint && pnpm typecheck && pnpm usagecheck",
+    "test": "pnpm vitest run",
+    "prerelease": "pnpm build && pnpm check && pnpm test",
+    "release": "changelogen --release && git push --follow-tags"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
