@@ -124,6 +124,54 @@ defuWithNull(
 */
 ```
 
+## Use with arrays
+
+By default, `defu` will concat arrays when merging.
+
+The merged array will have the values from source object first, followed by the values from default object.
+
+```js
+import { defu } from "defu";
+
+defu(
+  {
+    tags: ["javascript", "web"],
+  },
+  {
+    tags: ["programming", "development"],
+  },
+);
+/*
+  The default array values are appended after the source array values:
+  {
+     tags: ['javascript', 'web', 'programming', 'development']
+  }
+*/
+```
+
+If you want to reverse the order, you can create a custom `defu` instance with option `reverseArrayOrder` set to `true`:
+
+```js
+import { createDefu } from "defu";
+
+const defuReverseArray = createDefu(undefined, {
+  reverseArrayOrder: true,
+});
+defuReverseArray(
+  {
+    tags: ["javascript", "web"],
+  },
+  {
+    tags: ["programming", "development"],
+  },
+);
+/*
+  The default array values are prepended before the source array values:
+  {
+     tags: ['programming', 'development', 'javascript', 'web']
+  }
+```
+
 ## Function Merger
 
 Using `defuFn`, if user provided a function, it will be called with default value instead of merging.
@@ -184,10 +232,10 @@ defuArrayFn(
 
 **Note:** the function is called only if the value defined in defaults is an aray.
 
-### Remarks
+## Remarks
 
 - `object` and `defaults` are not modified
-- Nullish values ([`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null) and [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)) are skipped. Please use [defaults-deep](https://www.npmjs.com/package/defaults-deep) or [omit-deep](http://npmjs.com/package/omit-deep) or [lodash.defaultsdeep](https://www.npmjs.com/package/lodash.defaultsdeep) if you need to preserve or different behavior.
+- Nullish values ([`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null) and [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)) are skipped by default. If you want to consider them as valid values, see [Use with nullish values](#use-with-nullish-values) section.
 - Assignment of `__proto__` and `constructor` keys will be skipped to prevent security issues with object pollution.
 - Will concat `array` values (if default property is defined)
 
