@@ -2,6 +2,11 @@
 
 Assign default properties, recursively. Lightweight and Fast.
 
+A fork of [unjs/defu](https://github.com/unjs/defu) with some improvements:
+
+- Nullish values support
+- Reverse array merging order support
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![bundle][bundle-src]][bundle-href]
