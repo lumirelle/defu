@@ -39,7 +39,7 @@ run = { tasks = ["check", "test"] }
 run = "changelogen --release && git push --follow-tags"
 
 [tasks.publish]
-run = "pnpm publish --provenance"
+run = "pnpm publish --provenance --no-git-checks"
 
 [tasks.publish-commit]
 run = "pkg-pr-new publish"
