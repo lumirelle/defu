@@ -23,25 +23,15 @@
       }
     }
   },
-  "scripts": {
-    "dev": "vitest",
-    "build": "tsdown",
-    "lint": "oxlint src && oxfmt --check src test",
-    "lint:fix": "oxlint src --fix && oxfmt src test",
-    "typecheck": "tsc --noEmit",
-    "usagecheck": "echo WIP!",
-    "check": "pnpm lint && pnpm typecheck && pnpm usagecheck",
-    "test": "pnpm vitest run",
-    "prerelease": "pnpm build && pnpm check && pnpm test",
-    "release": "changelogen --release && git push --follow-tags"
-  },
   "devDependencies": {
     "@types/node": "^26.1.2",
     "@vitest/coverage-v8": "^4.1.10",
     "changelogen": "^0.6.2",
+    "changelogithub": "^15.0.4",
     "expect-type": "^1.4.0",
     "oxfmt": "^0.62.0",
     "oxlint": "^1.77.0",
+    "pkg-pr-new": "^0.0.86",
     "taze": "^19.17.2",
     "tsdown": "^0.22.14",
     "typescript": "npm:typescript-native-bridge@^6.0.3-bridge.10.tsgo.7.0.2",

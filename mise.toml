@@ -1,3 +1,48 @@
 [tools]
 node = "latest"
 pnpm = "latest"
+
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']
+
+[deps.pnpm]
+auto = true
+
+[tasks.dev]
+run = 'vitest'
+
+[tasks.build]
+run = 'tsdown'
+
+[tasks.lint]
+run = "oxlint src && oxfmt --check src test"
+
+[tasks."lint:fix"]
+run = "oxlint --fix src && oxfmt src test"
+
+[tasks.typecheck]
+run = "tsc --noEmit"
+
+[tasks.check]
+depends = "build"
+run = { tasks = ["lint", "typecheck"] }
+
+[tasks.test]
+depends = "build"
+run = "vitest run"
+
+[tasks.prerelease]
+# All tasks in parallel.
+run = { tasks = ["check", "test"] }
+
+[tasks.release]
+run = "changelogen --release && git push --follow-tags"
+
+[tasks.changelog]
+run = "changelogithub"
+
+[tasks.publish]
+run = "pnpm publish --provenance"
+
+[tasks.publish-commit]
+run = "pkg-pr-new publish"
