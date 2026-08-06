@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v1.2.2
+
+[compare changes](https://github.com/lumirelle/defu/compare/v1.2.1...v1.2.2)
+
+### 🤖 CI
+
+- Publish with `--no-git-checks` ([be0ab51](https://github.com/lumirelle/defu/commit/be0ab51))
+
+### ❤️ Contributors
+
+- Lumirelle ([@lumirelle](https://github.com/lumirelle))
+
 ## v1.2.1
 
 [compare changes](https://github.com/lumirelle/defu/compare/v1.2.0...v1.2.1)
