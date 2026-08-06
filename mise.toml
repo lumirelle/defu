@@ -38,9 +38,6 @@ run = { tasks = ["check", "test"] }
 [tasks.release]
 run = "changelogen --release && git push --follow-tags"
 
-[tasks.changelog]
-run = "changelogithub"
-
 [tasks.publish]
 run = "pnpm publish --provenance"
 
