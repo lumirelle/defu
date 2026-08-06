@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v1.2.1
+
+[compare changes](https://github.com/lumirelle/defu/compare/v1.2.0...v1.2.1)
+
+### 🏡 Chore
+
+- Migrate to mise ecosystem ([e7bd4ed](https://github.com/lumirelle/defu/commit/e7bd4ed))
+
+### 🤖 CI
+
+- Generate changelog via `changelogen` ([5d2cf2f](https://github.com/lumirelle/defu/commit/5d2cf2f))
+
+### ❤️ Contributors
+
+- Lumirelle ([@lumirelle](https://github.com/lumirelle))
+
 ## v1.2.0
 
 [compare changes](https://github.com/lumirelle/defu/compare/v1.0.0...v1.2.0)
