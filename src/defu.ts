@@ -1,10 +1,5 @@
 import { isPlainObject } from "./_utils";
-import type {
-  Merger,
-  DefuFn as DefuFunction,
-  DefuInstance,
-  DefuOptions,
-} from "./types";
+import type { Merger, DefuFn as DefuFunction, DefuInstance, DefuOptions } from "./types";
 
 // Base function to apply defaults
 function _defu<T>(
@@ -18,19 +13,16 @@ function _defu<T>(
     return _defu(baseObject, {}, namespace, merger);
   }
 
-  const object = Object.assign({}, defaults);
+  const object = { ...defaults };
 
-  for (const key in baseObject) {
+  for (const key of Object.keys(baseObject as Record<string, any>)) {
     if (key === "__proto__" || key === "constructor") {
       continue;
     }
 
-    const value = baseObject[key];
+    const value = (baseObject as Record<string, any>)[key];
 
-    if (
-      options?.acceptNullish !== true &&
-      (value === null || value === undefined)
-    ) {
+    if (options?.acceptNullish !== true && (value === null || value === undefined)) {
       continue;
     }
 
@@ -59,10 +51,7 @@ function _defu<T>(
 }
 
 // Create defu wrapper with optional merger and multi arg support
-export function createDefu(
-  merger?: Merger,
-  options?: DefuOptions,
-): DefuFunction {
+export function createDefu(merger?: Merger, options?: DefuOptions): DefuFunction {
   return (...arguments_) =>
     // eslint-disable-next-line unicorn/no-array-reduce
     arguments_.reduce((p, c) => _defu(p, c, "", merger, options), {} as any);
@@ -88,4 +77,4 @@ export const defuArrayFn = createDefu((object, key, currentValue) => {
   }
 });
 
-export type { Defu } from "./types";
+export type { Defu, DefuFn, DefuInstance } from "./types";
